@@ -5,7 +5,7 @@ module.exports = {
             extensions: ".scss"
         }),
         require("autoprefixer")({
-            browsers: ["last 2 versions"],
+            browsers: ["> 0.5%"],
             cascade: false
         }),
         require("postcss-advanced-variables"),
