@@ -5,10 +5,10 @@ $circleDiameter: calc($flagHeight * .6);
 $whiteCrossWidth: calc($flagWidth * .17);
 $redCrossWidth: calc($flagWidth * .08);
 $triangleSize: calc($flagHeight / 2);
+
 body {
 	margin: 0;
 	padding: 0;
-	background-color: lightgrey;
 }
 
 *, *:before, *:after { box-sizing: border-box; }
@@ -16,10 +16,9 @@ body {
 .flag {
 	width: $flagWidth;
 	height: $flagHeight;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: 10px;
-	// border: 1px solid #000;
-	box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
 }
 
 .ukraine {
@@ -99,7 +98,6 @@ body {
 		display: block;
 		position: absolute;
 		border: $triangleSize solid transparent;
-		// height: $flagHeight;
 		border-left: $triangleSize solid #11457E;
 	}
 }	
@@ -118,7 +116,7 @@ body {
 		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 		pointer-events: none;
 		opacity: 0;
-		transition: .5s;
+		transition: .6s;
 		font-size: 28px;
 		border-radius: 6px;
 	} 
