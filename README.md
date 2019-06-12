@@ -15,12 +15,11 @@ npm install
 
 # serve at localhost:3000
 gulp
-(When server is running, you can change the value of $flagWidth variable at the very beginning in src/index.scss file and save this file. You should see proportional flag's size change in the browser)
+(When server is running, you can change the value of $flagWidth variable 
+at the very beginning in src/index.scss file and save this file. 
+You should see proportional flag's size change in the browser)
 
 
-
-# build for production with minification
-npm run prod
 ```
 
 
