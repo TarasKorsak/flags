@@ -1,0 +1,129 @@
+$flagWidth: 300px;
+
+$flagHeight: calc($flagWidth * 2 / 3);
+$circleDiameter: calc($flagHeight * .6);
+$whiteCrossWidth: calc($flagWidth * .17);
+$redCrossWidth: calc($flagWidth * .08);
+$triangleSize: calc($flagHeight / 2);
+body {
+	margin: 0;
+	padding: 0;
+	background-color: lightgrey;
+}
+
+*, *:before, *:after { box-sizing: border-box; }
+
+.flag {
+	width: $flagWidth;
+	height: $flagHeight;
+	margin-top: 10px;
+	margin-left: 10px;
+	// border: 1px solid #000;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.ukraine {
+	.line1 {
+		height: 50%;
+		background-color: #005BBB;
+	}
+	.line2 {
+		height: 50%;
+		background-color: #FFD500;
+	}
+}	
+
+.japan {
+	position: relative;
+	background-color: #fff;
+	.circle {
+		width: $circleDiameter;
+		height: $circleDiameter;
+		border-radius: 50%;
+		background-color: #BC002D;
+		position: absolute;
+		top: calc(($flagHeight - $circleDiameter)/2);
+		left: calc(($flagWidth - $circleDiameter)/2);
+	}
+}
+
+.island {
+	background-color: #003897;
+	position: relative;
+	.elem1 {
+		position: absolute;
+		width: $whiteCrossWidth;
+		height: 100%;
+		background-color: #fff;
+		left: calc(($flagWidth - $whiteCrossWidth) * .35);
+		z-index: 10;
+	}
+	.elem2 {
+		position: absolute;
+		height: $whiteCrossWidth;
+		width: 100%;
+		top: calc(($flagHeight - $whiteCrossWidth) / 2);
+		background-color: #fff;
+		z-index: 20;
+	}
+	.elem3 {
+		position: absolute;
+		width: $redCrossWidth;
+		height: 100%;
+		background-color: red;
+		left: calc(($flagWidth - $redCrossWidth) * .363);
+		z-index: 30;
+	}
+	.elem4 {
+		position: absolute;
+		height: $redCrossWidth;
+		width: 100%;
+		top: calc(($flagHeight - $redCrossWidth) / 2);
+		background-color: red;
+		z-index: 40;
+	}
+}
+
+.czech {
+	position: relative;
+	.line1 {
+		height: 50%;
+		background-color: #FFFFFF;
+	}
+	.line2 {
+		height: 50%;
+		background-color: #D7141A;
+	}
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		border: $triangleSize solid transparent;
+		// height: $flagHeight;
+		border-left: $triangleSize solid #11457E;
+	}
+}	
+
+[data-tooltip] {
+	position: relative;
+	&::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		width: 200px;
+		left: 50%; 
+		top: 0;
+		background: #3989c9;
+		color: #fff;
+		text-align: center;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+		pointer-events: none;
+		opacity: 0;
+		transition: .5s;
+		font-size: 28px;
+		border-radius: 6px;
+	} 
+	&:hover::after {
+		opacity: 1;
+		left: $flagWidth;
+	}
+}
